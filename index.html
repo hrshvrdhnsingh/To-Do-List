@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="to-do-card">
+            <div class="header">
+                <h2>To-Do List</h2>
+                <i class="fa-solid fa-pencil"></i>
+                <input type="checkbox" id="toggle" class="toggle--checkbox" />
+                <label for="toggle" class="toggle--label" onclick="changeColor()">
+                    <span class="toggle--label-background"></span>
+                </label>
+            </div>
+            <form class="add-task" autocomplete="off">
+                <input class= "text-holder" name= "add-task" type="text" placeholder="Submit your task...">
+                <button class= "submit-btn">Add</button> 
+            </form>
+            <div class="taskslist">
+                <!-- <div class="tasks">
+                    <input type="text" name="task-name"class="text" value="Task 1" readonly>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>  -->
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    <script src="https://kit.fontawesome.com/58a810656e.js"></script>
+</body>
+</html>

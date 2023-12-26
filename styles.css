@@ -1,0 +1,174 @@
+*{padding: 0; margin: 0; overflow-x: hidden;}
+:root {
+    /** sunny side **/
+    --blue-background: #c2e9f6;--blue-border: #72cce3;--blue-color: #96dcee;
+    --yellow-background: #fffaa8;--yellow-border: #f5eb71;
+    /** dark side **/
+    --indigo-background: #808fc7;--indigo-border: #5d6baa;--indigo-color: #6b7abb;
+    --gray-border: #e8e8ea;--gray-dots: #e8e8ea;
+    /** general **/
+    --white: #fff;
+  }
+.wrapper{
+    width: 100vw; min-height: 100vh;
+    /* background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%); */
+    background: url(./assets/2106.w015.n001.448A.p30.448.jpg); background-repeat: no-repeat;
+    background-size:cover;
+    display: flex; justify-content: center; align-items: center;
+}
+.dark-mode.to-do-card{
+    background-color: #2f363e;
+    color: #FF0000;
+    box-shadow: 10px 20px 100px rgba(0,0,0,0.25), 20px 30px 100px rgba(0,0,0,0.25), 30px 40px 100px rgba(0,0,0,0.25), 30px 50px 100px rgba(0,0,0,0.25);
+}
+.to-do-card{
+    background-color: #FCD5CE; width: 42vw; height: 60vh;
+    display: flex; flex-direction: column; align-items: center;
+    border-radius: 26px; opacity: 1;
+    box-shadow: 10px 10px 20px #ebc4bd, 20px 10px 45px #ebc4bd, 30px 40px 100px rgba(0,0,0,0.25), 30px 50px 100px rgba(0,0,0,0.25);
+}
+.header{ width: 93%; height: 14%; display: flex; margin-top: 2.5%;}
+.header h2{ font-family: Rubik Doodle Shadow;  font-size: 10rem; margin-left: 1%;}
+                        /* Designing the button */
+.toggle--checkbox { display: none; margin-left: 70%; }
+/* Outer Box*/
+.toggle--label {
+    width: 4.3vw; height: 5.4vh; left: 43%; z-index: 1;
+    background: var(--blue-color);border-radius: 100px;border: 12px solid var(--blue-border);
+    display: flex;position: relative;transition: all 350ms ease-in;
+}
+
+.toggle--label:before {
+    animation-name: reverse;animation-duration: 350ms;
+    animation-fill-mode: forwards;transition: all 350ms ease-in;
+    content: '';width: 2vw;height: 2vw;
+    border: 5px solid var(--yellow-border);top: 9.3%;
+    left: 10px;position: absolute;border-radius: 2vw;background: var(--yellow-background);
+}
+@keyframes reverse {
+    0% { left: 140px; width: 82px;}
+    60% { left: 72px; width: 112px;}
+    100% { left: 4px;}
+}
+.toggle--checkbox:checked ~ .to-do-card { background-color: var(--indigo-background);}
+.toggle--label-background:before {
+    content: '';position: absolute;top: -50px;width: 98px;height: 50px;
+    border-radius: 15px;background: var(--white);left: -100px;transition: all 150ms ease-in;
+}
+.toggle--label-background:after {
+    content: '';position: absolute;top: 145px;width: 100px;height: 30px;
+    border-radius: 5px;background: var(--white);left: 120px;transition: all 150ms ease-in;
+}
+.toggle--label-background {
+    width: 20px;height: 5px;border-radius: 15px;position: relative;
+    background: var(--white);left: 155px;top: 60px;transition: all 150ms ease-in;
+}
+toggle--checkbox:checked + .toggle--label:before {
+    background: var(--white); border-color: var(--gray-border);
+    animation-name: switch; animation-duration: 350ms; animation-fill-mode: forwards;
+}
+@keyframes switch {
+    0% {left: 4px;}
+    60% {left: 4px;width: 112px;}
+    100% {left: 132px;width: 120px;}
+}
+/*the moon*/
+.toggle--label:after {
+    transition-delay: 0ms;
+    transition: all 200ms ease-in;
+    position: absolute;
+    content: '';
+    box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+    left: 183px;
+    top: 43px;
+    width: 13px;
+    height: 13px;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 0;
+  }
+.toggle--checkbox:checked + .toggle--label:after { transition-delay: 350ms;opacity: 1;}
+/*dark mode dot*/
+/* .toggle--checkbox:checked + .toggle--label .toggle--label-background {
+    left: 60px;width: 7px;
+} */
+/**/
+.toggle--checkbox:checked + .toggle--label {
+    background: var(--indigo-color);
+    border-color: var(--indigo-border);
+  }
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+    width: 15px;height: 5px;top: -25px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+    width: 5px;height: 15px;left: -30px;top: 20px;
+}
+.toggle--checkbox:checked + .toggle--label:before {
+    background: var(--white);
+    border-color: var(--gray-border);
+    animation-name: switch;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+  }
+.toggle--checkbox:checked + .toggle--label .toggle--label-background {
+  left: 60px;
+  width: 5px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+  width: 5px;
+  height: 5px;
+  top: 25px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+  width: 5px;
+  height: 5px;
+  left: -30px;
+}
+.header i{ font-size: 120px; margin-top: 1.5%; margin-left: 2%; }
+.add-task{
+    width: 91%; height: 12%; margin-top: 4%; background-color: #edeef0;
+    border-radius: 100px; display: flex; justify-content: space-between;
+    
+}
+.text-holder{
+    width: 76%; height: 97%; border-radius: 100px; font-family: Poppins, serif;
+    font-size: 72px; padding-left: 4%; background-color: transparent; border: none;
+}
+.submit-btn{
+    width: 23%; height: 100%; border-radius: 100px; font-size: 81px;
+    background-color: #ff5945; border: none; font-weight:600;
+}
+.submit-btn:hover{
+    cursor: pointer; transition-delay: 0s; font-size: 92px;
+}
+.taskslist{
+    width: 90%; height: 54%;
+    display: flex; flex-direction: column; margin-top: 4%;
+    position: relative; align-items: center;
+    gap: 4%; 
+}
+.tasks{ 
+    display: flex;
+    width: 90%; height: 14%; 
+    background-color: #b2b5bb;
+    border-radius: 70px; padding-left: 5%;
+    order: unset;
+}
+.text{
+    width: 74%; background: transparent; border: none; font-size: 71px;
+    font-family: Poppins, serif; appearance: none;
+}
+.edit{
+    width: 9%; background: transparent; border: none; font-size: 70px;
+    font-family: Poppins, serif; cursor: pointer;
+    
+}
+.delete{
+    width: 14%; background: transparent; border: none;font-size: 70px;
+    font-family: Poppins, serif; color:crimson; cursor: pointer; 
+}
+.tasks .text:not(:read-only){
+    color:#382e2d;
+}
+input:focus{outline:none;}
